@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from myApp.models import Course
 
-# Create your views here.
+def index(request):
+    course_list = Course.objects.order_by('-title', 'startdate', 'description')
+
+    context_dict = {}
+    context_dict['courses'] = course_list
+    return render(request, 'myApp/index.html', context=context_dict)
+
