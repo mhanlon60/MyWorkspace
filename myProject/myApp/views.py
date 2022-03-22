@@ -7,5 +7,5 @@ def index(request):
 
     context_dict = {}
     context_dict['courses'] = course_list
-    return render(request, 'myApp/index.html', context=context_dict)
+    return render(request, 'myApp/course.html', context=context_dict)
 
